@@ -1,0 +1,29 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Vehicle List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Manufacturer</th>
+            <th>Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let vehicle of vehicles | async">
+            <td>{{vehicle.model}}</td>
+            <td>{{vehicle.year}}</td>
+            <td>{{vehicle.manufacturer}}</td>
+            <td>{{vehicle.type}}</td>
+            <td><button (click)="deleteVehicle(vehicle.id)" class="btn btn-danger">Delete</button>
+                <button (click)="vehicleDetails(vehicle.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
